@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PesanKopi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/primary"
+        android:padding="45dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Kopi Hitam"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/secondary2"
+            android:textSize="35sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/kopi"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kamu memesan kopi hitam.\nSilahkan sesuaikan takaran gula di bawah ini. Jika sudah klik lanjutkan maka Jessica akan membuatkan kopi untukmu."
+                android:fontFamily="@font/lato_reguler"
+                android:textColor="@color/secondary2"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gula"
+            android:textColor="@color/secondary"
+            android:textSize="16sp"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/pahit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_light_stroke">
+                <TextView
+                    android:id="@+id/textPahit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pahit"
+                    android:textColor="@color/light"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/less_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_light_stroke">
+                <TextView
+                    android:id="@+id/textLessSugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Less Sugar"
+                    android:textColor="@color/light"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_light_stroke">
+                <TextView
+                    android:id="@+id/textNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textColor="@color/light"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/manis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/rounded_light_stroke">
+                <TextView
+                    android:id="@+id/textManis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manis"
+                    android:textColor="@color/light"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <android.widget.Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_secondary"
+            android:text="Lanjutkan"
+            android:fontFamily="@font/lato_bold"
+            android:id="@+id/lanjutkan"
+            android:textColor="@color/primary"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
