@@ -4,9 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.database.FirebaseDatabase
 
 class PesanKopi : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
@@ -15,6 +18,7 @@ class PesanKopi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pesan_kopi)
 
+        var gula:String?=null
 //        deklarasi jenis gula
         val pahit = findViewById<LinearLayout>(R.id.pahit)
         val less_sugar = findViewById<LinearLayout>(R.id.less_sugar)
@@ -40,6 +44,8 @@ class PesanKopi : AppCompatActivity() {
             pahit.setBackgroundResource(R.drawable.rounded_light)
             pahit.setPadding(34,20,34,20)
             textPahit.setTextColor(getColorStateList(R.color.primary))
+
+            gula = "pahit"
         }
         less_sugar.setOnClickListener{
             pahit.setBackgroundResource(R.drawable.rounded_light_stroke)
@@ -55,6 +61,8 @@ class PesanKopi : AppCompatActivity() {
             less_sugar.setBackgroundResource(R.drawable.rounded_light)
             less_sugar.setPadding(34,20,34,20)
             textLessSugar.setTextColor(getColorStateList(R.color.primary))
+
+            gula = "less_sugar"
         }
         normal.setOnClickListener{
             less_sugar.setBackgroundResource(R.drawable.rounded_light_stroke)
@@ -70,6 +78,8 @@ class PesanKopi : AppCompatActivity() {
             normal.setBackgroundResource(R.drawable.rounded_light)
             normal.setPadding(34,20,34,20)
             textNormal.setTextColor(getColorStateList(R.color.primary))
+
+            gula = "normal"
         }
         manis.setOnClickListener{
             less_sugar.setBackgroundResource(R.drawable.rounded_light_stroke)
@@ -85,6 +95,27 @@ class PesanKopi : AppCompatActivity() {
             manis.setBackgroundResource(R.drawable.rounded_light)
             manis.setPadding(34,20,34,20)
             textManis.setTextColor(getColorStateList(R.color.primary))
+
+            gula = "manis"
+        }
+
+        val lanjutkan = findViewById<Button>(R.id.lanjutkan)
+        lanjutkan.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            if(gula == null){
+                //tampilkan dialog suruh pilih gula
+                builder.setTitle("Ups")
+                builder.setMessage("Silahkan pilih gula dulu")
+                builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+                }
+
+                builder.show()
+            }else{
+                //kirim data ke firebase
+                val database = FirebaseDatabase.getInstance().getReference("Pesanan")
+                val Pesanan = Pesanan(gula, "diproses")
+                database.child("pesan").setValue(Pesanan)
+            }
         }
     }
 

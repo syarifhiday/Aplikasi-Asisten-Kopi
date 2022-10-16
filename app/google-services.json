@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "141553285156",
+    "firebase_url": "https://mesinkopi-308e1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mesinkopi-308e1",
+    "storage_bucket": "mesinkopi-308e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141553285156:android:94d1fde9290a4e83ff40b1",
+        "android_client_info": {
+          "package_name": "com.syarifh.asistenkopi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141553285156-p58d3erjlth6hqgnsvrjss89iuvu2fck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRLi_tMBfgkzI3TgpL9rresSxhuWkX_Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141553285156-p58d3erjlth6hqgnsvrjss89iuvu2fck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
