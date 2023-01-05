@@ -1,12 +1,15 @@
 package com.syarifh.asistenkopi
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
@@ -114,9 +117,13 @@ class PesanKopi : AppCompatActivity() {
                 //kirim data ke firebase
                 val database = FirebaseDatabase.getInstance().getReference("Pesanan")
                 val Pesanan = Pesanan(gula, "diproses")
-                database.child("pesan").setValue(Pesanan)
+                database.child("pesan").setValue(Pesanan).addOnSuccessListener {
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+
+                }
             }
         }
     }
-
 }

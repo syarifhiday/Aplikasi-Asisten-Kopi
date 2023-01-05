@@ -3,10 +3,12 @@ package com.syarifh.asistenkopi
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -17,6 +19,15 @@ const val channelId = "notification_channel"
 const val channelName = "com.syarifh.asistenkopi"
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    override fun onNewToken(token: String) {
+        Log.d(TAG, "Refreshed token: $token")
+
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // FCM registration token to your app server.
+//        sendRegistrationToServer(token)
+    }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         if(remoteMessage.getNotification() != null){
